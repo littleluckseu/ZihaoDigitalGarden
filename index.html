@@ -40,11 +40,15 @@
 </head>
 
 <body>
+  <nav>
+    <a href="#/">入门</a>
+    <a href="#/">数字花园</a> 
+  </nav>
   <div id="app"></div>
-
 
   <!-- JavaScript -->
   <script src="https://browser.sentry-cdn.com/4.4.2/bundle.min.js" crossorigin="anonymous"></script>
+  <script src="assets/js/main.js"></script>
   <script>
     // Sentry.io
     Sentry.init({
@@ -61,11 +65,6 @@
       themeable: {
         responsiveTables: true // default
       },
-
-      coverpage: 'coverpage.md',
-      homepage: 'README.md',
-      loadSidebar: '_sidebar.md',
-
       /*
       footer: {
         copy: '<span>Apache License 2.0 | &copy; 2015-2018</span>',
@@ -83,36 +82,23 @@
       },
       auto2top: true,
       maxLevel: 3,
-      subMaxLevel: 2,
-
       // PLUGINS
       // -----------------------------------------------------------------
       executeScript: true,
       ga: 'UA-152900803-1',
-      search: {
-        maxAge: 86400000, // 过期时间，单位毫秒，默认一天
-        paths: [], // or 'auto'
-        depth: 3,
-        noData: '没有结果，别搜了',
-        placeholder: 'Search...'
-      },
     };
     window.$docsify = {
-  count:{
-    countable:true,
-    fontsize:'0.9em',
-    color:'rgb(90,90,90)',
-    language:'chinese'
+      count:{
+        countable:true,
+        fontsize:'0.9em',
+        color:'rgb(90,90,90)',
+        language:'chinese'
+      }
   }
-}
   </script>
-  <script src="assets/js/main.js"></script>
-
-
-
+ 
   <!-- Gitalk  -->
-
-  <script src="//unpkg.com/docsify/lib/plugins/gitalk.min.js"></script>
+ 
   <script src="assets/js/gitalk.min.js"></script>
   <script>
     const gitalk = new Gitalk({
@@ -129,12 +115,28 @@
       //id: location.pathname
       //id: location.href
     })
-
+    // 在这块修改就行了
     window.$docsify = {
     loadSidebar: true,
-    coverpage: true
+    onlyCover: false,
+    coverpage: '_coverpage.md',
+    homepage: 'README.md',
+    loadSidebar: '_sidebar.md',
+    loadNavbar: 'navbar.md',
+    subMaxLevel: 2,
+    search:
+      {
+        maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+        paths: [], // or 'auto'
+        depth: 3,
+        noData: '没有结果，别搜了',
+        placeholder: 'Search...'
+      },
   }
   </script>
+
+  <script src="//unpkg.com/docsify/lib/plugins/gitalk.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0"></script>
@@ -174,7 +176,7 @@
 
   <script type="text/javascript">
     mermaid.initialize({
-      startOnLoad: false
+      startOnLoad: false 
     });
   </script>
 

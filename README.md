@@ -12,10 +12,7 @@ Hello!
 
 
 你可以通过以下的方式联系到我：  
-    **Telegram**：https://t.me/linyuxuanlin  
-    **GitHub**：https://github.com/linyuxuanlin  
-    **WeChat**：linyuxuanlin  
+**知乎**：青临
+ **WeChat**：EchoZihao
 
-Power's Wiki 基于 Docsify, 并托管于 Github Pages.  
-因 Docsify 即时渲染的特性，在部分设备加载速度较慢，请谅解。
 
