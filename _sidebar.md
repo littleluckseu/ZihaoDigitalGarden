@@ -4,25 +4,11 @@
 * [Tools](Tools.md)
 * [Home](/post)
 
-* **电路设计**
-  * [STM32 系统硬件电路设计](post/电路设计/STM32系统硬件电路设计.md)
-  * [SwiftCtrl - 蓝牙手柄](post/电路设计/SwiftCtrl-蓝牙手柄.md)
-  * [TinyDVR - 小巧身材，满载动力](post/电路设计/TinyDVR-小巧身材，满载动力.md)
-  * [ZenDriver - 高性能的电机驱动](post/电路设计/ZenDriver-高性能的电机驱动.md)
-  * [PCB 布线规范](post/电路设计/PCB布线规范.md)
-  * [PCB 元件布局规范](post/电路设计/PCB元件布局规范.md)
-  * [函数思想在电路设计中的应用](post/电路设计/函数思想在电路设计中的应用.md)
-  * [基本元器件选型](post/电路设计/基本元器件选型.md)
-  * [电源的设计](post/电路设计/电源的设计.md)
-  * [AD 小技巧整理](post/电路设计/AD小技巧整理.md)
-  * [AD 入门系列一：环境搭建](post/电路设计/AD入门系列一：环境搭建.md)
-  * [AD 入门系列二：基础知识](post/电路设计/AD入门系列二：基础知识.md)
-  * [AD 入门系列三：原理图绘制](post/电路设计/AD入门系列三：原理图绘制.md)
-  * [AD 入门系列四：PCB 绘制](post/电路设计/AD入门系列四：PCB绘制.md)
-  * [AD 入门系列五：库文件绘制](post/电路设计/AD入门系列五：库文件绘制.md)
-  * [自制 CMSIS-DAP](post/电路设计/自制CMSIS-DAP.md)
-* **无人机**
-  * [N3 参数调试](post/无人机/N3参数调试.md)
+* **数字花园**
+  * 
+
+* **编程学习**
+  * [编程学习索引页](post/CodeLearning.md)
 * **产品经理**
   * [产品经理的日常](post/产品经理/产品经理的日常.md)
   * [中台的概念](post/产品经理/中台的概念.md)
