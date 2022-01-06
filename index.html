@@ -27,11 +27,17 @@
 </head>
 
 <body>
+  <style type="text/css">
+    .content {
+    overflow: auto;
+  }
+  </style>
   <nav>
     <a href="#/">入门</a>
     <a href="#/">数字花园</a> 
   </nav>
   <div id="app"></div>
+
 
   <!-- JavaScript -->
   <script src="https://browser.sentry-cdn.com/4.4.2/bundle.min.js" crossorigin="anonymous"></script>
@@ -41,13 +47,13 @@
     Sentry.init({
       dsn: 'https://60f8b01c2f0b461a87e5c48f88778039@sentry.io/1367220'
     });
-
+  
     // Docsify
     window.$docsify = {
       // GENERAL
       // -----------------------------------------------------------------
 
-      name: 'ZihaoBlog ',
+      name: 'ZihaoDigitalGarden ',
       repo: '',
       themeable: {
         responsiveTables: true // default
@@ -83,25 +89,7 @@
       }
   }
   </script>
- 
-  <!-- Gitalk  -->
- 
-  <script src="assets/js/gitalk.min.js"></script>
   <script>
-    const gitalk = new Gitalk({
-      clientID: 'dc80c5fbfc6060a2809c',
-      clientSecret: 'ff485ff154f3c51ba178dad2e7d7f68501d65ca8',
-      repo: 'ZihaoDigitalGarden',
-      owner: 'littleluckseu',
-      admin: ['littleluckseu'],
-      // facebook-like distraction free mode
-      distractionFreeMode: true,
-      enableHotKey: true, // 提交评论快捷键(cmd/ctrl + enter) 
-      //id: window.location.href
-      //id: md5(location.pathname)
-      //id: location.pathname
-      //id: location.href
-    })
     // 在这块修改就行了
     window.$docsify = {
     loadSidebar: true,
@@ -110,12 +98,12 @@
     homepage: 'README.md',
     loadSidebar: '_sidebar.md',
     loadNavbar: 'navbar.md',
-    subMaxLevel: 2,
+    subMaxLevel: 6,
     search:
       {
         maxAge: 86400000, // 过期时间，单位毫秒，默认一天
-        paths: [], // or 'auto'
-        depth: 3,
+        paths: 'auto',
+        depth: 6,
         noData: '没有结果，别搜了',
         placeholder: 'Search...'
       },
@@ -133,7 +121,8 @@
   <script src="https://cdn.jsdelivr.net/npm/docsify-pagination@2/dist/docsify-pagination.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/external-script.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/ga.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
   <script src="//unpkg.com/docsify/lib/plugins/emoji.js"></script>
   <script src="//unpkg.com/docsify-copy-code"></script>
   <script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
@@ -165,9 +154,6 @@
       startOnLoad: false 
     });
   </script>
-
-
-
 
 </body>
 
