@@ -10,6 +10,85 @@
   <meta name="google-site-verification" content="_EWJaM8G6xwMtEqemO4yN8WqSU2CaKVi3jTj0gLg48E">
   <title>ZihaoBlog</title>
   <link rel="icon" href="assets/img/logo128.png">
+ <!-- alert -->
+  <link rel="stylesheet" href="https://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.css" type='text/css' media='all' />
+  <!--Modify sidebar-->
+  <style>
+    /* 以下是侧边栏(自定义) */
+    aside.sidebar ul li {
+      margin: 0;
+      position: relative;
+    }
+    aside.sidebar ul li ul {
+      margin: 6px 0;
+    }
+
+    aside.sidebar ul li p {
+      padding-left: 22px;
+      font-size: 18px;
+      font-weight: normal;
+    }
+
+    aside.sidebar ul li a {
+      line-height: 35px;
+      font-size: 14px;    /* 导航栏字体大小 */
+      padding: 3px 0 3px 22px;
+    }
+
+    aside.sidebar ul li.active > a {
+      font-size: 16px !important;
+    }
+
+    aside.sidebar ul li.active > a:before {
+      content: '' !important;
+      position: absolute !important;
+      margin: 0 !important;
+      width: 10px !important;
+      height: 10px !important;
+      top: 15px !important;
+      left: 0px !important;
+      border-radius: 50% !important;
+      background-color: #fed24a !important;
+      box-shadow: 0 0 0 3px rgba(254, 210, 74, 0.4) !important;
+    }
+
+     
+     /* .markdown-section strong {
+      color: rgb(239, 112, 96);
+    }
+
+    .app-nav{
+      position: fixed;
+      margin: 0;
+  
+      padding: 10px 0 10px 0;
+      width: calc(100% - 325px);
+      background-color: #fff;
+      height: 55px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .markdown-section code {
+      border-radius: 2px;
+      font-family: "Helvetica Neue",Helvetica,"Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;
+      font-size: 16px !important;
+      margin: 0 2px;
+      padding: 3px 5px;
+      white-space: nowrap;
+      border: 1px solid #282c34;
+      color: rgb(184, 101, 208);
+    }
+
+    .markdown-section > div > img, .markdown-section pre {
+      box-shadow: 2px 2px 20px 6px rgb(255, 255, 255) !important;
+    }
+
+    .markdown-section a:not(:hover) {
+      text-decoration: none;
+    } */
+
+</style>
+
 
   <!-- Stylesheets -->
    <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">!-->
@@ -17,8 +96,6 @@
   <!--<link rel="stylesheet" href="assets/css/theme-defaults.css" title="Simple"> -->
   <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
   <link rel="stylesheet" href="assets/css/main.css">
-
-
   <!-- Test Stylesheets -->
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/themes/vue.css"> 
   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/themes/buble.css"> -->
@@ -32,66 +109,24 @@
     overflow: auto;
   }
   </style>
-  <nav>
-    <a href="#/">入门</a>
-    <a href="#/">数字花园</a> 
-  </nav>
-  <div id="app"></div>
-
-
+  <div id="app">🏃‍🏃‍🏃‍💨加载中...</div>
+  <!-- 复制提醒 -->
+  <script src="https://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.js"></script>
+  <script>
+    document.body.oncopy = function () {
+      swal("复制成功 ",
+            "若要转载或引用请务必保留原文链接，并申明来源。",
+            "success"); };
+  </script>
   <!-- JavaScript -->
   <script src="https://browser.sentry-cdn.com/4.4.2/bundle.min.js" crossorigin="anonymous"></script>
   <script src="assets/js/main.js"></script>
-  <script>
-    // Sentry.io
-    Sentry.init({
-      dsn: 'https://60f8b01c2f0b461a87e5c48f88778039@sentry.io/1367220'
-    });
   
-    // Docsify
-    window.$docsify = {
-      // GENERAL
-      // -----------------------------------------------------------------
-
-      name: 'ZihaoDigitalGarden ',
-      repo: '',
-      themeable: {
-        responsiveTables: true // default
-      },
-      /*
-      footer: {
-        copy: '<span>Apache License 2.0 | &copy; 2015-2018</span>',
-        auth: ' Power Lin',
-        //pre: '<hr/>',
-        style: 'text-align: center;',
-        style: 'className'
-      },
-      */
-
-      // NAVIGATION
-      // -----------------------------------------------------------------
-      alias: {
-        '.*?/changelog': 'https://cdn.jsdelivr.net/npm/docsify-themeable@0/CHANGELOG.md',
-      },
-      auto2top: true,
-      maxLevel: 3,
-      // PLUGINS
-      // -----------------------------------------------------------------
-      executeScript: true,
-      ga: 'UA-152900803-1',
-    };
-    window.$docsify = {
-      count:{
-        countable:true,
-        fontsize:'0.9em',
-        color:'rgb(90,90,90)',
-        language:'chinese'
-      }
-  }
-  </script>
   <script>
     // 在这块修改就行了
     window.$docsify = {
+    name: '🌈Zihao\'s Digital Garden ',
+    repo: 'https://github.com/littleluckseu/ZihaoDigitalGarden/tree/master',
     loadSidebar: true,
     onlyCover: false,
     coverpage: '_coverpage.md',
@@ -99,24 +134,148 @@
     loadSidebar: '_sidebar.md',
     loadNavbar: 'navbar.md',
     subMaxLevel: 6,
-    search:
-      {
-        maxAge: 86400000, // 过期时间，单位毫秒，默认一天
-        paths: 'auto',
-        depth: 6,
-        noData: '没有结果，别搜了',
-        placeholder: 'Search...'
+    autoHeader: true,
+    mergeNavbar: true,
+    count:{
+        countable:true,
+        fontsize:'0.9em',
+        color:'rgb(90,90,90)',
+        language:'chinese'
       },
+      search:
+     {
+       paths: 'auto',
+       placeholder: '🔍 搜索',
+       noData: '😒 找不到结果',
+       // Headline depth, 1 - 6
+       depth: 6,
+       maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+     },
+     //页脚
+      footer: {
+        copy: '<span id="sitetime"></span> <br> <span>Copyright &copy; 2022 &nbsp 💖 &nbsp</span>',
+        auth: ' Zihao',
+        pre: '<hr/>',
+        style: 'text-align: center;',
+        style: 'font-size: 18px; text-align: center;',
+      }, 
+      markdown: {
+        renderer: {
+          code: function(code, lang, base=null) {
+
+            if (lang === "dot") {
+              return (
+                      '<div class="viz">'+ Viz(code, "SVG")+'</div>'
+              );
+            }
+
+            var pdf_renderer = function(code, lang, verify) {
+              function unique_id_generator(){
+                function rand_gen(){
+                  return Math.floor((Math.random()+1) * 65536).toString(16).substring(1);
+                }
+                return rand_gen() + rand_gen() + '-' + rand_gen() + '-' + rand_gen() + '-' + rand_gen() + '-' + rand_gen() + rand_gen() + rand_gen();
+              }
+              if(lang && !lang.localeCompare('pdf', 'en', {sensitivity: 'base'})){
+                if(verify){
+                  return true;
+                }else{
+                  var divId = "markdown_code_pdf_container_" + unique_id_generator().toString();
+                  var container_list = new Array();
+                  if(localStorage.getItem('pdf_container_list')){
+                    container_list = JSON.parse(localStorage.getItem('pdf_container_list'));
+                  }
+                  container_list.push({"pdf_location": code, "div_id": divId});
+                  localStorage.setItem('pdf_container_list', JSON.stringify(container_list));
+                  return (
+                          '<div style="margin-top:'+ PDF_MARGIN_TOP +'; margin-bottom:'+ PDF_MARGIN_BOTTOM +';" id="'+ divId +'">'
+                          + '<a href="'+ code + '"> Link </a> to ' + code +
+                          '</div>'
+                  );
+                }
+              }
+              return false;
+            }
+            if(pdf_renderer(code, lang, true)){
+              return pdf_renderer(code, lang, false);
+            }
+            //return this.origin.code.apply(this, arguments);
+            return (base ? base : this.origin.code.apply(this, arguments));
+          }
+        }
+      },
+ 
   }
   </script>
-
-  <script src="//unpkg.com/docsify/lib/plugins/gitalk.min.js"></script>
+<!-- 添加网站运行时间统计 -->
+<script language=javascript>
+  function siteTime() {
+      window.setTimeout("siteTime()", 1000);
+      var seconds = 1000;
+      var minutes = seconds * 60;
+      var hours = minutes * 60;
+      var days = hours * 24;
+      var years = days * 365;
+      var today = new Date();
+      var todayYear = today.getFullYear();
+      var todayMonth = today.getMonth()   1;
+      var todayDate = today.getDate();
+      var todayHour = today.getHours();
+      var todayMinute = today.getMinutes();
+      var todaySecond = today.getSeconds();
+      /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+      year - 作为date对象的年份，为4位年份值
+      month - 0-11之间的整数，做为date对象的月份
+      day - 1-31之间的整数，做为date对象的天数
+      hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+      minutes - 0-59之间的整数，做为date对象的分钟数
+      seconds - 0-59之间的整数，做为date对象的秒数
+      microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+      /* 建站时间 */
+      var t1 = Date.UTC(2021, 03, 01, 00, 00, 00); 
+      var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+      var diff = t2 - t1;
+      var diffYears = Math.floor(diff / years);
+      var diffDays = Math.floor((diff / days) - diffYears * 365);
+      var diffHours = Math.floor((diff - (diffYears * 365   diffDays) * days) / hours);
+      var diffMinutes = Math.floor((diff - (diffYears * 365   diffDays) * days - diffHours * hours) / minutes);
+      var diffSeconds = Math.floor((diff - (diffYears * 365   diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+      document.getElementById("sitetime").innerHTML = " 本站已安全运行 "   diffYears   " 年 "   diffDays   " 天 "   diffHours   " 小时 "   diffMinutes   " 分 "   diffSeconds   " 秒 ";
+  }
+  siteTime();
+ </script>
+ <!--live2d 自动加载-->
+<!--<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js"></script>-->
+<script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+<script>
+  L2Dwidget.init({
+    "model": {
+      //jsonpath控制显示那个小萝莉模型，
+      //(切换模型需要改动)
+      jsonPath: "https://unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json",
+      "scale": 1
+    },
+    "display": {
+      "position": "right", //看板娘的表现位置
+      "width": 70,  //小萝莉的宽度
+      "height": 140, //小萝莉的高度
+      "hOffset": 35,
+      "vOffset": -20
+    },
+    "mobile": {
+      "show": true,
+      "scale": 0.5
+    },
+    "react": {
+      "opacityDefault": 0.7,
+      "opacityOnHover": 0.2
+    }
+  });
+</script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code@2"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify-pagination@2/dist/docsify-pagination.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/external-script.min.js"></script>
@@ -134,7 +293,11 @@
   <script src="//unpkg.com/prismjs/components/prism-cmake.min.js"></script>
   <script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
   <script src="//unpkg.com/prismjs/components/prism-java.min.js"></script>
-
+  <!-- 红心点击特效 -->
+  <script src="//cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@2.1.0/js/click_heart.js"></script> 
+  <!-- 访问量统计 -->
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
   <!-- 字数统计 -->
   <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
   <!-- flowchart requirements -->
@@ -145,16 +308,8 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js"></script>
   <!-- mermaid erquirements -->
   <script src="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-  <!-- footer 
+  <!-- footer  -->
   <script src="//unpkg.com/docsify-footer-enh/dist/docsify-footer-enh.min.js"></script>
-  -->
-
-  <script type="text/javascript">
-    mermaid.initialize({
-      startOnLoad: false 
-    });
-  </script>
-
+ 
 </body>
-
 </html>
