@@ -12,7 +12,21 @@
   <link rel="icon" href="assets/img/logo128.png">
  <!-- alert -->
   <link rel="stylesheet" href="https://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.css" type='text/css' media='all' />
-  <!--Modify sidebar-->
+  <!-- Stylesheets -->
+   <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">!-->
+
+  <!--<link rel="stylesheet" href="assets/css/theme-defaults.css" title="Simple"> -->
+  <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
+  <!--<link rel="stylesheet" href="assets/css/main.css"> -->
+  
+  <!-- Test Stylesheets -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/themes/vue.css"> 
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/themes/buble.css"> -->
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/themes/dark.css"> -->
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/themes/pure.css"> -->
+  <!-- 自定义特色样式：by myself -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/css/me.css">
+
   <style>
 
     /*加重描述strong*/
@@ -20,23 +34,7 @@
       color: rgb(239, 112, 96);
     }
 
-    .app-nav{
-      position: fixed;
-      margin: 0;
-      /*padding: 10px 50px 10px 0;*/
-      padding: 10px 0 10px 0;/*上、右、下、左*/
-      width: calc(100% - 325px);
-      background-color: #fff;
-      height: 55px;
-      border-bottom: 1px solid #eee;
-    }
-
-    /*.github-corner{
-      position: absolute;
-      z-index: 999999;
-      top: 0;
-    }*/
-
+  
     .markdown-section code {
       border-radius: 2px;
       font-family: "Helvetica Neue",Helvetica,"Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;
@@ -323,17 +321,7 @@
 
   </style>
 
-  <!-- Stylesheets -->
-   <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">!-->
 
-  <!--<link rel="stylesheet" href="assets/css/theme-defaults.css" title="Simple"> -->
-  <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
-  <link rel="stylesheet" href="assets/css/main.css">
-  <!-- Test Stylesheets -->
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/themes/vue.css"> 
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/themes/buble.css"> -->
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/themes/dark.css"> -->
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/themes/pure.css"> -->
 </head>
 
 <body>
@@ -343,6 +331,15 @@
   }
   </style>
   <div id="app">🏃‍🏃‍🏃‍💨加载中...</div>
+  <div class="aside_container">
+    <div class="advertisement">
+      <div class="Tencent_code">
+        <h4>作者公众号</h4>
+        <p style="font-size: 12px;">来了就是自己人</p>
+        <img src="assets/img/公众号二维码.jpg" alt="EnjoyToShare" />
+      </div>
+    </div>
+</div>
   <!-- 复制提醒 -->
   <script src="https://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.js"></script>
   <script>
@@ -367,8 +364,8 @@
     loadSidebar: '_sidebar.md',
     loadNavbar: 'navbar.md',
     subMaxLevel: 6,
-    autoHeader: true,
     mergeNavbar: true,
+    externalLinkTarget: '_blank', //外链打开方式：_blank表示在新标签页中打开
     count:{
         countable:true,
         fontsize:'0.9em',
@@ -386,7 +383,7 @@
      },
      //页脚
       footer: {
-        copy: '<span id="sitetime"></span> <br> <span>Copyright &copy; 2022 &nbsp 💖 &nbsp</span>',
+        copy: '<span id="sitetime"></span> <br> <span>Copyright &copy; 2022-至今 &nbsp 💖 &nbsp</span>',
         auth: ' Zihao',
         pre: '<hr/>',
         style: 'text-align: center;',
@@ -441,42 +438,42 @@
   }
   </script>
 <!-- 添加网站运行时间统计 -->
-<script language=javascript>
-  function siteTime() {
-      window.setTimeout("siteTime()", 1000);
-      var seconds = 1000;
-      var minutes = seconds * 60;
-      var hours = minutes * 60;
-      var days = hours * 24;
-      var years = days * 365;
-      var today = new Date();
-      var todayYear = today.getFullYear();
-      var todayMonth = today.getMonth()   1;
-      var todayDate = today.getDate();
-      var todayHour = today.getHours();
-      var todayMinute = today.getMinutes();
-      var todaySecond = today.getSeconds();
-      /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
-      year - 作为date对象的年份，为4位年份值
-      month - 0-11之间的整数，做为date对象的月份
-      day - 1-31之间的整数，做为date对象的天数
-      hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
-      minutes - 0-59之间的整数，做为date对象的分钟数
-      seconds - 0-59之间的整数，做为date对象的秒数
-      microseconds - 0-999之间的整数，做为date对象的毫秒数 */
-      /* 建站时间 */
-      var t1 = Date.UTC(2021, 03, 01, 00, 00, 00); 
-      var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
-      var diff = t2 - t1;
-      var diffYears = Math.floor(diff / years);
-      var diffDays = Math.floor((diff / days) - diffYears * 365);
-      var diffHours = Math.floor((diff - (diffYears * 365   diffDays) * days) / hours);
-      var diffMinutes = Math.floor((diff - (diffYears * 365   diffDays) * days - diffHours * hours) / minutes);
-      var diffSeconds = Math.floor((diff - (diffYears * 365   diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
-      document.getElementById("sitetime").innerHTML = " 本站已安全运行 "   diffYears   " 年 "   diffDays   " 天 "   diffHours   " 小时 "   diffMinutes   " 分 "   diffSeconds   " 秒 ";
-  }
-  siteTime();
- </script>
+  <!-- 添加网站运行时间统计 -->
+  <script language=javascript>
+    function siteTime() {
+       window.setTimeout("siteTime()", 1000);
+       var seconds = 1000;
+       var minutes = seconds * 60;
+       var hours = minutes * 60;
+       var days = hours * 24;
+       var years = days * 365;
+       var today = new Date();
+       var todayYear = today.getFullYear();
+       var todayMonth = today.getMonth() + 1;
+       var todayDate = today.getDate();
+       var todayHour = today.getHours();
+       var todayMinute = today.getMinutes();
+       var todaySecond = today.getSeconds();
+       /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+       year - 作为date对象的年份，为4位年份值
+       month - 0-11之间的整数，做为date对象的月份
+       day - 1-31之间的整数，做为date对象的天数
+       hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+       minutes - 0-59之间的整数，做为date对象的分钟数
+       seconds - 0-59之间的整数，做为date对象的秒数
+       microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+       var t1 = Date.UTC(2019, 06, 21, 22, 22, 22); //北京时间2019-06-21 22:22:22 //计划考研的日子，6月20日毕业典礼结束后，人生需要继续努力，加油，看到这句话的朋友们！
+       var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+       var diff = t2 - t1;
+       var diffYears = Math.floor(diff / years);
+       var diffDays = Math.floor((diff / days) - diffYears * 365);
+       var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+       var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+       var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+       document.getElementById("sitetime").innerHTML = " 本站已安全运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分 " + diffSeconds + " 秒 ";
+    }
+    siteTime();
+</script>
  <!--live2d 自动加载-->
 <!--<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js"></script>-->
 <script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
@@ -505,15 +502,13 @@
     }
   });
 </script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
-
   <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify-pagination@2/dist/docsify-pagination.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/external-script.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/ga.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+  
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
   <script src="//unpkg.com/docsify/lib/plugins/emoji.js"></script>
   <script src="//unpkg.com/docsify-copy-code"></script>
@@ -530,7 +525,6 @@
   <script src="//cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@2.1.0/js/click_heart.js"></script> 
   <!-- 访问量统计 -->
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-  
   <!-- 字数统计 -->
   <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
   <!-- flowchart requirements -->
