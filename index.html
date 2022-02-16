@@ -16,7 +16,6 @@
    <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">!-->
 
   <!--<link rel="stylesheet" href="assets/css/theme-defaults.css" title="Simple"> -->
-  <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
   <!--<link rel="stylesheet" href="assets/css/main.css"> -->
   
   <!-- Test Stylesheets -->
@@ -340,6 +339,23 @@
       </div>
     </div>
 </div>
+<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="">
+<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       //j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+</script>
+<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
   <!-- 复制提醒 -->
   <script src="https://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.js"></script>
   <script>
@@ -355,6 +371,25 @@
   <script>
     // 在这块修改就行了
     window.$docsify = {
+    plugins: [
+          function (hook, vm) {
+            // load livere
+            hook.beforeEach(function(content) {
+                var comment = "<div id='lv-container' data-id='city' data-uid='MTAyMC81NTUyMC8zMTk4Nw=='></div>\n\n----\n"
+                return content + comment;
+            });
+            hook.doneEach(function() {
+               (function(d, s) {
+                   var j, e = d.getElementsByTagName(s)[0];
+                   if (typeof LivereTower === 'function') { return; }
+                   j = d.createElement(s);
+                   j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                   j.async = true;
+                   e.parentNode.insertBefore(j, e);
+               })(document, 'script');
+            });
+          },
+        ],
     name: '🌈Zihao\'s Digital Garden ',
     repo: 'https://github.com/littleluckseu/ZihaoDigitalGarden/tree/master',
     loadSidebar: true,
@@ -372,6 +407,7 @@
         color:'rgb(90,90,90)',
         language:'chinese'
       },
+     
       search:
      {
        paths: 'auto',
@@ -434,9 +470,10 @@
           }
         }
       },
- 
   }
   </script>
+
+  
 <!-- 添加网站运行时间统计 -->
   <!-- 添加网站运行时间统计 -->
   <script language=javascript>
@@ -462,7 +499,7 @@
        minutes - 0-59之间的整数，做为date对象的分钟数
        seconds - 0-59之间的整数，做为date对象的秒数
        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
-       var t1 = Date.UTC(2019, 06, 21, 22, 22, 22); //北京时间2019-06-21 22:22:22 //计划考研的日子，6月20日毕业典礼结束后，人生需要继续努力，加油，看到这句话的朋友们！
+       var t1 = Date.UTC(2022, 02, 15, 22, 22, 22); 
        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
        var diff = t2 - t1;
        var diffYears = Math.floor(diff / years);
@@ -509,6 +546,8 @@
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/external-script.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/ga.min.js"></script>
   
+  <!--slide break-->
+  <script src="//unpkg.com/docsify-slides/dist/docsify-slides.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
   <script src="//unpkg.com/docsify/lib/plugins/emoji.js"></script>
   <script src="//unpkg.com/docsify-copy-code"></script>
