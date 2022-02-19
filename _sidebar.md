@@ -15,8 +15,19 @@
   * [知识卡片](post/实践篇/知识卡片.md)
   * [知识卡片实践案例](post/Mycards/知识卡片实践案例.md)
 * * **🌀输入篇**
-  * [编程学习索引页](post/CodeLearning.md) 
-
+  * [带着问题找答案-输入篇](post/Input/带着问题找答案--输入篇.md)
+  * [互联网信息分发简史](post/Input/互联网信息分发简史.md)
+  * [信息品位是什么？](post/Input/信息品位是什么？.md)
+  * [好问题源自哪里？](post/Input/好问题源自哪里？.md)
+  * [我们提问的对象有哪些？](post/Input/我们提问的对象有哪些？.md)
+  * [搜索之道](post/Input/搜索之道.md)
+  * [搜索之法](post/Input/搜索之法.md)
+  * [建立自己的信息渠道库](post/Input/建立自己的信息渠道库.md)
+  * [给自己一个“停止”按钮](post/Input/给自己一个“停止”按钮.md)
+* **🛠️工具使用篇**
+  * [我的知识生产工具流](post/Tools/我的知识生产工具流.md)
+  * [obsidian插件安装指南&安利](post/Tools/obsidian%20插件安装指南.md)
+  
 * **—————— 个人随记 ——————**
 * **🗃️MyCards**
   * [必要难度理论](post/Mycards/必要难度理论.md)
