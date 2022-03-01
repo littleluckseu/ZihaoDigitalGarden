@@ -382,6 +382,7 @@
     loadNavbar: 'navbar.md',
     subMaxLevel: 6,
     mergeNavbar: true,
+    auto2top: true,
     externalLinkTarget: '_blank', //外链打开方式：_blank表示在新标签页中打开
     count:{
         countable:true,
@@ -519,6 +520,20 @@
       "opacityDefault": 0.7,
       "opacityOnHover": 0.2
     }
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/jquery.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/jquery.goup.js"></script>
+<script type="text/javascript">
+  $(document).ready(function () {
+    $.goup({
+      trigger: 100,
+      bottomOffset: 52,
+      locationOffset: 25,
+      //title: 'TOP',
+      titleAsText: true
+    });
   });
 </script>
   <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
