@@ -31,6 +31,7 @@
   * [如何进行无压式记录？](post/Mycards/如何实现无压式记录？.md)
   * [无压记录的工作流](post/Mycards/无压记录的工作流.md)
 * **—————— 个人随记 ——————**
+  * [2022出国申请总结](post/Life/2022fall申请总结.md)
 * **🗃️MyCards**
   * [必要难度理论](post/Mycards/必要难度理论.md)
   * [组块思维](post/Mycards/组块思维.md)
